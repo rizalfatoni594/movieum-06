@@ -29,7 +29,7 @@ export default function MovieContextProvider({ children }) {
     return favorites.some((movie) => movie.id === movieId);
   }
 
-  function addtoFavorites(movie) {
+  function addToFavorites(movie) {
     setFavorites((prev) => [...prev, movie]);
   }
 
@@ -37,7 +37,7 @@ export default function MovieContextProvider({ children }) {
     setFavorites((prev) => prev.filter((movie) => movie.id !== movieId));
   }
 
-  const value = { favorites, isFavorite, addtoFavorites, removeFromFavorites };
+  const value = { favorites, isFavorite, addToFavorites, removeFromFavorites };
 
   return (
     <MovieContext.Provider value={value}>{children}</MovieContext.Provider>
